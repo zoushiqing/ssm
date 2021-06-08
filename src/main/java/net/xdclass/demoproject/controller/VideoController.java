@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("api/v1/video")
+@RequestMapping("api/v1/pub/video")
 public class VideoController {
 
     @Autowired
