@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private static Map<String, User> tokenMap = new HashMap<>();
+    public static Map<String, User> tokenMap = new HashMap<>();
     @Autowired
     UserMapper userMapper;
 
