@@ -4,7 +4,9 @@ import net.xdclass.demoproject.domain.User;
 import net.xdclass.demoproject.domain.Video;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -24,5 +26,10 @@ public class UserMapper {
         if (user == null) return null;
         if (user.getPwd().equals(pwd)) return user;
         return null;
+    }
+    public List<User> userList(){
+        List<User> userList=new ArrayList<>();
+        userList.addAll(userMap.values());
+        return userList;
     }
 }

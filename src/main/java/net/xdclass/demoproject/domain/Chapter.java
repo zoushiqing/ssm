@@ -1,7 +1,10 @@
 package net.xdclass.demoproject.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Chapter {
     private int id;
+    @JsonProperty("video_id")
     private int videoId;
     private String title;
 

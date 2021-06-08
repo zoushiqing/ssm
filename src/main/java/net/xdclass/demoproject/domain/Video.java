@@ -1,6 +1,10 @@
 package net.xdclass.demoproject.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -10,8 +14,12 @@ public class Video implements Serializable {
     private String title;
     private String summary;
     private int price;
+    @JsonProperty("cover_img")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String coverImg;
-    private Date createTime;
+    @JsonProperty("create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", locale = "zh", timezone = "GMT+8")
+    private Date createTime = new Date();
     private List<Chapter> chapterList;
 
     public List<Chapter> getChapterList() {
